@@ -1,0 +1,19 @@
+# Бинарные файлы Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Скомпилированный бинарник (в корне проекта)
+main
+
+# Папка с кэшем Go
+go.work
+go.work.sum
+
+# Мусор macOS
+.DS_Store
+
+# Настройки VS Code
+.vscode/
