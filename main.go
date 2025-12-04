@@ -54,12 +54,16 @@ func main() {
 		var a, b float64
 		var op string
 
-		fmt.Print("Enter first num: ")
-		fmt.Scan(&a)
 		fmt.Print("Input operation (+, -, *, /, ^, sqrt, %, square, abs): ")
 		fmt.Scan(&op)
-		fmt.Print("Enter second num: ")
-		fmt.Scan(&b)
+
+		fmt.Print("Enter first num: ")
+		fmt.Scan(&a)
+
+		if op != "sqrt" && op != "square" && op != "abs" {
+			fmt.Print("Enter second num: ")
+			fmt.Scan(&b)
+		}
 
 		switch op {
 		case "+":
