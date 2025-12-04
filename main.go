@@ -2,6 +2,25 @@ package main
 
 import "fmt"
 
+func add(a, b float64) float64 {
+	return a + b
+}
+
+func sub(a, b float64) float64 {
+	return a - b
+}
+
+func mul(a, b float64) float64 {
+	return a * b
+}
+
+func div(a, b float64) (float64, error) {
+	if b == 0 {
+		return 0, fmt.Errorf("division by zero")
+	}
+	return a / b, nil
+}
+
 func main() {
 
 	for {
@@ -18,16 +37,17 @@ func main() {
 
 		switch op {
 		case "+":
-			fmt.Println("Res:", a+b)
+			fmt.Println("Res:", add(a, b))
 		case "-":
-			fmt.Println("Res: ", a-b)
+			fmt.Println("Res: ", sub(a, b))
 		case "*":
-			fmt.Println("Res: ", a*b)
+			fmt.Println("Res: ", mul(a, b))
 		case "/":
-			if b == 0 {
-				fmt.Println("Error! devision by zero!")
+			result, err := div(a, b)
+			if err != nil {
+				fmt.Println("Error:", err)
 			} else {
-				fmt.Println("Res: ", a/b)
+				fmt.Println("Res: ", result)
 			}
 		default:
 			fmt.Println("Unknown opreation. Try again.")
